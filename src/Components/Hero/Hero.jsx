@@ -1,24 +1,13 @@
 import React, { useState } from "react";
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { keyframes } from "@emotion/react";
-import backgroundImage from "../../assets/BackgroundImg.jpg";
+import { Box, Typography } from "@mui/material";
+import backgroundImage from "../../assets/background.jpg";
 
-// Define keyframes for animations
-const fadeIn = keyframes`
-  0% { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
-`;
+const Hero = () => {
+  const [showText, setShowText] = useState(true);
 
-const pulse = keyframes`
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-`;
-
-const Home = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const [isHovered, setIsHovered] = useState(false);
+  const handleClick = () => {
+    setShowText(false);
+  };
 
   return (
     <Box
@@ -32,69 +21,44 @@ const Home = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "0 16px",
+        
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onClick={handleClick}
     >
-      <Box
-        sx={{
-          width: "100vw",
-          height: "100vh",
-          backgroundColor: "rgba(19, 18, 18, 0.44)",
-          position: "fixed",
-          top: 0,
-          left: 0,
-          zIndex: 9999,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          animation: `${fadeIn} 1.5s ease-in-out`,
-        }}
-      >
+      {showText && (
         <Box
-          component="img"
-          src="https://www.svgrepo.com/show/426192/cogs-settings.svg"
-          alt="Maintenance Logo"
           sx={{
-            height: "160px",
-            mb: "22px",
-            animation: isHovered ? `${pulse} 2s infinite` : "none",
-            transition: "transform 0.3s ease-in-out",
-            "&:hover": {
-              transform: "scale(1.2)", // Additional hover effect
-            },
-          }}
-        />
-        <Typography
-          variant="h2"
-          fontWeight="bold"
-          color={isHovered ? "white" : "white"} // Changed to a noticeable color shift
-          sx={{
-            fontSize: { xs: "20px", sm: "24px", md: "40px", lg: "60px" },
-            mt: 2,
-            transition: "color 0.3s ease-in-out",
+            textAlign: "center",
+            color: "Pink",
+            padding: { xs: 2, sm: 4, md: 6 }, 
+            backgroundColor: "rgba(0, 0, 0, 0)",
+            borderRadius: 2,
+            maxWidth: { xs: "90%", sm: "80%", md: "60%" }, 
           }}
         >
-          Site Under Maintenance...
-        </Typography>
-        <Typography
-          variant="h4"
-          fontWeight="bold"
-          color={isHovered ? "white" : "white"} // Changed to a noticeable color shift
-          sx={{
-            fontSize: { xs: "14px", sm: "16px", md: "25px", lg: "30px" },
-            mt: 2,
-            transition: "color 0.3s ease-in-out",
-          }}
-        >
-          We're working hard to improve the user experience. Stay tuned!
-        </Typography>
-      </Box>
+          <Typography
+            variant="h2"
+            sx={{
+              fontSize: { xs: "1.5rem", sm: "2.5rem", md: "3.5rem" },
+              fontWeight: "bold",
+              mb: 2,
+            }}
+          >
+            Professional Tech For Your Business
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" }, 
+            }}
+          >
+            At Kreate Systems, We Specialize in Web development, Graphic
+            designing, and Marketing
+          </Typography>
+        </Box>
+      )}
     </Box>
   );
 };
 
-export default Home;
+export default Hero;

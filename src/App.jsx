@@ -3,6 +3,7 @@ import { CssBaseline } from '@mui/material';
 import Navbar from './Components/Navbar/Navbar';
 import Hero from './Components/Hero/hero';
 import ContactUs from './Components/ContactUs/ContactUs';
+import MaintenanceContent from './Components/SiteMaintenance/MaintenanceContent';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Hero />
       <ContactUs/>
+      <MaintenanceContent/>
     </>
   );
 }
