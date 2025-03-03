@@ -56,7 +56,7 @@ const ContactUs = () => {
   };
 
   const contactInfoText =
-    "At Greekology, we specialize in delivering tailored software solutions to empower your business. Contact us to discuss how our expertise can drive your success.";
+    "Infomaster Tech provides IT consulting, advisory services, and digital solutions to enhance business productivity and navigate evolving technology landscapes.";
 
   return (
     <Box
