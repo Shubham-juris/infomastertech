@@ -1,8 +1,8 @@
 import React from 'react';
 import { CssBaseline } from '@mui/material';
 import Navbar from './Components/Navbar/Navbar';
-import Hero from './Components/Hero/hero';
 import ContactUs from './Components/ContactUs/ContactUs';
+import Hero from './Components/Hero/Hero';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <CssBaseline />
       <Navbar />
       <Hero />
-      <ContactUs/>
+      <ContactUs />
     </>
   );
 }
